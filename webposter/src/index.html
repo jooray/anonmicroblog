@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anonymous Microblog</title>
+<style type="text/css">
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #222;
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-size: 16px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.form-area {
+  margin-bottom: 20px;
+}
+
+img {
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+label, input, textarea, button {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-area">
+      <h1>Anonymous microblog</h1>
+      <textarea id="message" rows="10" cols="30" placeholder="What would you like to say?"></textarea>
+      <label for="password">Secret password:</label>
+      <input type="password" id="password" />
+      <button id="sendButton" onclick="deriveKeysAndSubmit()">Send it out!</button>
+      <p id="outputArea"></p>
+    </div>
+    <img src="https://image.nostr.build/f6141b7ec00b2aafc6af028536951bbc64e6a981af258452ade4e17b69c3c38c.jpg"/>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
