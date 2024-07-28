@@ -1,0 +1,23 @@
+{
+  "name": "webview-nostr",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "html-webpack-plugin": "^5.6.0",
+    "nostr-tools": "^2.7.1",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  },
+  "scripts": {
+    "start": "webpack serve --open",
+    "build": "webpack"
+  }
+}

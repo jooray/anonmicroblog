@@ -51,17 +51,15 @@ npm run build
 
 Under dist/ you will have index.html and main.js. You can now deploy this to your webserver of choice. Or through Nostr.
 
-### Web deployment without a webserver
+### Deployment of webposter
 
-If you want to deploy the microblog on the web without a webserver, you can use these amazing
-services:
+Webposter is the page with JavaScript that generates the key from the password and allows users to
+post. We need to deploy it somehow so it is accessible to the users.
 
-[npub.pro](https://npub.pro/) will allow you to display the microblog on your npub.pro domain.
-Just use the generated identity, pick a theme and you are good to go.
+#### Webposter through nsite / npub.hu
 
-(Another option that I have not tried, but should work is [oracolo](https://github.com/dtonon/oracolo?tab=readme-ov-file), which should work pretty well with the webposter below, including its deployment method)
+You can do this using [nsite](https://github.com/lez/nsite).
 
-We also need to deploy the webposter. You can do this using [nsite](https://github.com/lez/nsite).
 Clone, do pip install, then:
 
 ```
@@ -72,13 +70,37 @@ python3 uploadr.py --sec 'HEREGOESTHEHEXPRIVATEKEY' ~/anonmicroblog/webposter/di
 
 You will have a new website at yournpub.nostr.hu/ and that will serve as the web poster.
 
-You can link this page from npub.pro in Settings. It will then appear in the menu.
-
 ### Web deployment with a webserver
 
 Simply copy the dist folder somewhere to a path on your webserver, and point your browser to
 it. It is a static HTML, so no need for any backend framework. It will generate the key from the
 password and communicate directly with the relays.
+
+### Webpage for viewing the posts
+
+Then we somehow need the users to be able to view the posts (and we should link together these
+two). Again, you have several options.
+
+#### Using npub.pro
+
+[npub.pro](https://npub.pro/) will allow you to display the microblog on your npub.pro domain.
+Just use the generated identity, pick a theme and you are good to go.
+
+You can link the webposter from npub.pro in Settings. It will then appear in the menu.
+
+#### Using oracolo
+
+Another option is [oracolo](https://github.com/dtonon/oracolo?tab=readme-ov-file), which
+should work pretty well with the webposter, deployed the same way. You should enable displaying
+short notes in oracolo, otherwise it would just stuck on loading.
+
+#### Using included webview
+
+The included webview is a simple HTML page that will load the posts from the server and display
+them. It has pages by calendar year and does not even show dates (personal preference, the microblog
+is not much about dates anyway).
+
+It has a bit of an old-school hacker feel
 
 ## Why this way?
 
