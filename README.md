@@ -40,8 +40,7 @@ Under webposter/ directory:
 
 First edit index.html to change the title and description, localize to your own language.
 
-Then edit index.js to set at least the npub, salt (if you have changed it from the default) and npub.
-Optionally adjust the relays.
+Then edit index.js to set at least the npub, and if you have changed the defaults, adjust salt and number of iterations. Optionally adjust the relays.
 
 Then:
 ```
